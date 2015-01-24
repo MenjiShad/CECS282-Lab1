@@ -71,8 +71,10 @@ int main(int argc, char* argv[]) {
 	// If the user chooses to switch doors, 
 	// switch the userPick to the unopened door
 	// Alternate: replace all the "if" statements with something smaller
+	// Solution: Total value of doors --> 1 + 2 + 3 == 6
+	// The switch door's value = 6 - (user's door) - (revealed door)
 	if (choice == 'Y' || choice == 'y') {
-		if (userPick == 1 && revealDoor == 2)
+		/*if (userPick == 1 && revealDoor == 2)
 			userPick = 3;
 		else if (userPick == 1 && revealDoor == 3)
 			userPick = 2;
@@ -83,7 +85,8 @@ int main(int argc, char* argv[]) {
 		else if (userPick == 3 && revealDoor == 1)
 			userPick = 2;
 		else if (userPick == 3 && revealDoor == 2)
-			userPick = 1;
+			userPick = 1; */
+		userPick = 6 - userPick - revealDoor;
 		cout << "Switched to door " << userPick << endl;
 	}
 	// If the user's door matches the winning door
