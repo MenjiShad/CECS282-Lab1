@@ -65,27 +65,15 @@ int main(int argc, char* argv[]) {
 	}
 
 	// Does the user want to switch doors?
+	// If the user chooses to switch doors, 
+	// switch the userPick to the unopened door
 	cout << "Do you wish to switch doors? (y/n)" << endl; 
 	char choice;
 	cin >> choice;
-	// If the user chooses to switch doors, 
-	// switch the userPick to the unopened door
-	// Alternate: replace all the "if" statements with something smaller
-	// Solution: Total value of doors --> 1 + 2 + 3 == 6
+
+	// Total value of doors --> 1 + 2 + 3 == 6
 	// The switch door's value = 6 - (user's door) - (revealed door)
 	if (choice == 'Y' || choice == 'y') {
-		/*if (userPick == 1 && revealDoor == 2)
-			userPick = 3;
-		else if (userPick == 1 && revealDoor == 3)
-			userPick = 2;
-		else if (userPick == 2 && revealDoor == 1)
-			userPick = 3;
-		else if (userPick == 2 && revealDoor == 3)
-			userPick = 1;
-		else if (userPick == 3 && revealDoor == 1)
-			userPick = 2;
-		else if (userPick == 3 && revealDoor == 2)
-			userPick = 1; */
 		userPick = 6 - userPick - revealDoor;
 		cout << "Switched to door " << userPick << endl;
 	}
@@ -114,4 +102,5 @@ int main(int argc, char* argv[]) {
 	int cont;
 	cout << "Press any key to continue..." << endl;
 	cin >> cont;
+	return 0; //ends program
 }
